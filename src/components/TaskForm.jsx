@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
-import './TaskForm.css'
+import React, { useState } from "react";
+import "./TaskForm.css";
+import { v4 as uuidv4 } from "uuid";
 
-function TaskForm() {
-    const [task, setTask] = useState('');
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (task.trim()) {
-        // Handle task submission logic here
-        alert("task added")
-        console.log(task)
-        setTask("");
-      }
-    };
+function TaskForm({ setTaskList }) {
+  const [task, setTask] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!task.trim()) {
+      alert("Task cannot be empty!");
+      return;
+    }
+    // Handle task submission logic here
+    setTaskList((prev) => [
+      ...prev,
+      {
+        text: task,
+        status: "pending",
+        id: uuidv4(),
+      },
+    ]);
+    setTask("");
+  };
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="task-input">Task:</label>
@@ -23,15 +32,11 @@ function TaskForm() {
         placeholder="Enter the task"
         autoComplete="off"
       />
-      <button
-        type="submit"
-        className={task.trim().length === 0 ? "disable" : ""}
-        disabled={task.trim().length === 0}
-      >
+      <button type="submit" className="add-task">
         Add Task
       </button>
     </form>
   );
 }
 
-export default TaskForm
+export default TaskForm;

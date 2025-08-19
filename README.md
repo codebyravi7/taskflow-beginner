@@ -1,12 +1,80 @@
-# React + Vite
+# TaskFlow Beginner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based task management app for beginners. Easily add, complete, and delete tasks, with persistent storage and a daily motivational quote.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new tasks
+- Mark tasks as completed or pending
+- Delete tasks
+- Filter tasks by status (All, Completed, Pending)
+- Tasks are saved in localStorage
+- Fetches and displays a random quote from an API
+- Responsive, modern UI
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- CSS (Flexbox, gradients, card layouts)
+- UUID for unique task IDs
+- Bootstrap Icons (optional)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/codebyravi7/taskflow-beginner.git
+   cd taskflow-beginner
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+```
+capstone-ravi/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── ShowTasks.jsx
+│   │   ├── ShowTasks.css
+│   │   ├── TaskForm.jsx
+│   │   ├── TaskForm.css
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.jsx
+├── package.json
+├── vite.config.js
+├── README.md
+```
+
+## Customization
+
+- Change the quote API URL in `App.jsx` to use your preferred quote source.
+- Update styles in CSS files for your own look and feel.
+
+## License
+
+MIT
+
+---
+
+Made with ❤️ by Ravi
